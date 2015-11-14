@@ -5,6 +5,7 @@ package hust;
  * 
  * 有一个只由0，1，2三种元素构成的整数数组，请使用交换、原地排序而不是使用计数进行排序。请返回排序后的数组.
  *
+ * @author 2015-11-14
  */
 public class NetherlandsFlag {
 	public static void main(String[] args) {
