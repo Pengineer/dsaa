@@ -3,6 +3,10 @@ package hust.string;
 /**
  * 对于两棵彼此独立的二叉树A和B，请编写一个高效算法，检查A中是否存在一棵子树与B树的拓扑结构完全相同。
  * 给定两棵二叉树的头结点A和B，请返回一个bool值，代表A中是否存在一棵同构于B的子树。
+ * 
+ * 核心：二叉树转String数组 + KMP算法解决字符串匹配问题（模式匹配）
+ * 
+ * KMP：相对于Brute Force(BF)算法而言，KMP算法在匹配时不存在主串指针回溯的问题。匹配中前缀和后缀是相对模式串的失配位置来说的。貌似实际中KMP算法用的并不多
  *
  * @author 2015-11-24
  *
@@ -17,12 +21,15 @@ public class IdenticalTree {
         System.out.println(AStr);
         System.out.println(BStr);
         
+        //使用了Java的内部函数，不提倡
         if(AStr.contains(BStr)) return true;
         else return false;
     }
+    
+    //递归遍历二叉树
     public static String getTreeString(TreeNode head) {
-        if(head == null) return "#"; //必须加一个特殊符号
-        String tmp = head.val + "#";
+        if(head == null) return "!#"; //必须加一个特殊符号，区分前面的节点是叶子节点，子树的比对必须遍历到叶子节点
+        String tmp = head.val + "";
         String left = getTreeString(head.left);
         tmp = tmp + left;
         String right = getTreeString(head.right);
@@ -50,6 +57,7 @@ public class IdenticalTree {
     	headB.right = B2;
     	
     	System.out.println(chkIdentical(headA, headB));
+
 	}
 }
 
@@ -105,6 +113,7 @@ public class IdenticalTree {
         return mi == ms.length ? index - mi : -1;
     }
  
+    //获取next函数
     public int[] getNextArray(char[] ms) {
         if (ms.length == 1) {
             return new int[] { -1 };
