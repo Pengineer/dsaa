@@ -1,4 +1,15 @@
+<<<<<<< HEAD
 #Wed Nov 25 19:08:21 CST 2015
 eclipse.preferences.version=1
 encoding//src/hust/string/note=GBK
 encoding/<project>=UTF-8
+=======
+#Sat Nov 14 15:13:16 CST 2015
+eclipse.preferences.version=1
+encoding//src/hust/sort/InsertSort.java=GBK
+encoding//src/hust/sort/MergeSort.java=GBK
+encoding//src/hust/sort/QuickSort.java=GBK
+encoding//src/hust/sort/SelectSort.java=GBK
+encoding//src/hust/sort/ShellSort.java=GBK
+encoding/<project>=GBK
+>>>>>>> 323eca09c6bd2409540c8aef5633d3dc6637ebeb
