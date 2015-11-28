@@ -33,5 +33,4 @@ public class SelectSort {
 		a[j] = a[i];
 		a[i] = tmp;
 	}
-
 }
