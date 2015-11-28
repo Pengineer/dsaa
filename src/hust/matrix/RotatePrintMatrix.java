@@ -1,11 +1,11 @@
 package hust.matrix;
 
 /**
- * 旋转打印矩阵
+ * 顺时针旋转打印矩阵
  * 
  * 关键：左上角和右下角来确定一个矩阵
  * 
- * @author liangjian
+ * @author 2015-11-28
  *
  */
 public class RotatePrintMatrix {
