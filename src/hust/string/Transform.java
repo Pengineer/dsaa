@@ -25,6 +25,7 @@ public class Transform {
 		return true;
 	}
 	
+	//最佳
 	public static boolean verify2(String str1, String str2) {
         if (str1 == null || str2 == null || str1.length() != str2.length()) {
             return false;
