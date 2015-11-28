@@ -1,9 +1,9 @@
 package hust;
 
 /**
- * ÕÛ°ë²éÕÒ£ºÇ°ÌáÊÇË³Ğò±í
+ * æŠ˜åŠæŸ¥æ‰¾ï¼šå‰ææ˜¯é¡ºåºè¡¨
  * 
- * ºËĞÄ£º¸ù¾İkeyÖµ²»¶Ï¸Ä±äÇø¼äµÄ´óĞ¡¡£
+ * æ ¸å¿ƒï¼šæ ¹æ®keyå€¼ä¸æ–­æ”¹å˜åŒºé—´çš„å¤§å°ã€‚
  */
 public class BinarySearch {
 
@@ -13,7 +13,7 @@ public class BinarySearch {
 		System.out.println(isExist);
 	}
 	
-	//·Çµİ¹é: O(logn)
+	//éé€’å½’: O(logn)
 	public static boolean Bin_Search(int[] a, int key) {
 		int low=0, high=a.length;
 		while(low <= high) {
@@ -29,7 +29,7 @@ public class BinarySearch {
 		return false;
 	}
 	
-	//µİ¹é
+	//é€’å½’
 	public static boolean Bin_Search_2(int[] a, int key) {
 		int low=0, high=a.length;
 		int mid = (low+high)/2;
@@ -41,7 +41,7 @@ public class BinarySearch {
 		if(key == a[mid]) {
 			return true;
 		} else if (key > a[mid]) {
-			System.arraycopy(a, mid, b, 0, mid);   //½«Ò»¸öÊı×éµÄ²¿·Öcopyµ½ÁíÒ»¸öÊı×é
+			System.arraycopy(a, mid, b, 0, mid);   //å°†ä¸€ä¸ªæ•°ç»„çš„éƒ¨åˆ†copyåˆ°å¦ä¸€ä¸ªæ•°ç»„
 			return Bin_Search_2(b, key);
 		} else {
 			System.arraycopy(a, 0, b, 0, mid);

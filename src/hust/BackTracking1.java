@@ -3,16 +3,16 @@ package hust;
 import java.util.ArrayList;
 
 /**
- * »ØËİ·¨£ºÒ»ÖÖÑ¡ÓÅËÑË÷·¨£¬ÓÖ³ÆÎªÊÔÌ½·¨£¬°´Ñ¡ÓÅÌõ¼şÏòÇ°ËÑË÷£¬ÒÔ´ïµ½Ä¿±ê¡£µ«µ±Ì½Ë÷µ½Ä³Ò»²½Ê±£¬
- * 		     ·¢ÏÖÔ­ÏÈÑ¡Ôñ²¢²»ÓÅ»ò´ï²»µ½Ä¿±ê£¬¾ÍÍË»ØÒ»²½ÖØĞÂÑ¡Ôñ£¬ÕâÖÖ×ß²»Í¨¾ÍÍË»ØÔÙ×ßµÄ¼¼ÊõÎª»ØËİ·¨¡£
+ * å›æº¯æ³•ï¼šä¸€ç§é€‰ä¼˜æœç´¢æ³•ï¼Œåˆç§°ä¸ºè¯•æ¢æ³•ï¼ŒæŒ‰é€‰ä¼˜æ¡ä»¶å‘å‰æœç´¢ï¼Œä»¥è¾¾åˆ°ç›®æ ‡ã€‚ä½†å½“æ¢ç´¢åˆ°æŸä¸€æ­¥æ—¶ï¼Œ
+ * 		     å‘ç°åŸå…ˆé€‰æ‹©å¹¶ä¸ä¼˜æˆ–è¾¾ä¸åˆ°ç›®æ ‡ï¼Œå°±é€€å›ä¸€æ­¥é‡æ–°é€‰æ‹©ï¼Œè¿™ç§èµ°ä¸é€šå°±é€€å›å†èµ°çš„æŠ€æœ¯ä¸ºå›æº¯æ³•ã€‚
  * 
- * ÎÊÌâ£ºÇóº¬ÓĞn¸öÔªËØµÄ¼¯ºÏµÄ×Ó¼¯¡££¨ÔªËØµÄÈ¡ÉáÎÊÌâ£©
+ * é—®é¢˜ï¼šæ±‚å«æœ‰nä¸ªå…ƒç´ çš„é›†åˆçš„å­é›†ã€‚ï¼ˆå…ƒç´ çš„å–èˆé—®é¢˜ï¼‰
  */
 public class BackTracking1 {
 
 	public static void main(String[] args) {
-		ArrayList<String> source = new ArrayList<String>(); //Ô­Ê¼¼¯ºÏ
-		ArrayList<String> dest = new ArrayList<String>();   //Ô­¼¯ºÏ×Ó¼¯
+		ArrayList<String> source = new ArrayList<String>(); //åŸå§‹é›†åˆ
+		ArrayList<String> dest = new ArrayList<String>();   //åŸé›†åˆå­é›†
 		source.add("1");
 		source.add("2");
 		source.add("3");
@@ -23,27 +23,27 @@ public class BackTracking1 {
 		System.out.println(1<<3);
 	}
 	
-	//·½·¨Ò»£ºÔªËØiÊÇ·ñÔÚ×Ó¼¯destÖĞ
+	//æ–¹æ³•ä¸€ï¼šå…ƒç´ iæ˜¯å¦åœ¨å­é›†destä¸­
 	public static void SubSet(int i, ArrayList<String> src, ArrayList<String> dest) {
-		if(i >= src.size()) {//ÍË³öÌõ¼ş£º¶Ô×îºóÒ»¸öÔªËØµÄ´¦ÀíÍê
+		if(i >= src.size()) {//é€€å‡ºæ¡ä»¶ï¼šå¯¹æœ€åä¸€ä¸ªå…ƒç´ çš„å¤„ç†å®Œ
 			System.out.println(dest.toString());
 		} else {
 			dest.add(src.get(i));
-			SubSet(i+1, src, dest); //°üº¬ÔªËØiµÄ×Ó¼¯
+			SubSet(i+1, src, dest); //åŒ…å«å…ƒç´ içš„å­é›†
 			dest.remove(src.get(i));
-			SubSet(i+1, src, dest); //²»°üº¬iµÄ×Ó¼¯
+			SubSet(i+1, src, dest); //ä¸åŒ…å«içš„å­é›†
 		}
 	}
 	
-	//·½·¨¶ş
+	//æ–¹æ³•äºŒ
 	private static void subSet(char[] a){
 		int n = a.length;
-		for(int i=0; i<(1<<n); i++){//Ñ­»·2^n´Î
-			String setStr = Integer.toBinaryString(i);//½«intÖµ×ª»»³É¶ş½øÖÆÖµµÄ×Ö·û´®
+		for(int i=0; i<(1<<n); i++){//å¾ªç¯2^næ¬¡
+			String setStr = Integer.toBinaryString(i);//å°†intå€¼è½¬æ¢æˆäºŒè¿›åˆ¶å€¼çš„å­—ç¬¦ä¸²
 			int unChoose = n-setStr.length();
 			System.out.print("{");
 			for(int j=0; j<setStr.length(); j++){
-				if(setStr.charAt(j)=='1')//1±íÊ¾±»Ñ¡ÖĞ£¬0±íÊ¾Ã»ÓĞ±»Ñ¡ÖĞ
+				if(setStr.charAt(j)=='1')//1è¡¨ç¤ºè¢«é€‰ä¸­ï¼Œ0è¡¨ç¤ºæ²¡æœ‰è¢«é€‰ä¸­
 					System.out.print(a[unChoose+j]);
 			}
 			System.out.println("}");
@@ -51,12 +51,12 @@ public class BackTracking1 {
 	}
 	
 	/**
-	 * ·½·¨Ò»£ºµİ¹éÊµÏÖ    --by ¡¶Êı¾İ½á¹¹ÓëËã·¨¡·
-	 * ´ÓÔ­Ê¼¼¯ºÏÖĞµÄÔªËØ½Ç¶È³ö·¢£¬ËüÒªÃ´ÊôÓÚÄ³Ò»×Ó¼¯£¬ÒªÃ´²»ÊôÓÚ£ºO(2^n)
+	 * æ–¹æ³•ä¸€ï¼šé€’å½’å®ç°    --by ã€Šæ•°æ®ç»“æ„ä¸ç®—æ³•ã€‹
+	 * ä»åŸå§‹é›†åˆä¸­çš„å…ƒç´ è§’åº¦å‡ºå‘ï¼Œå®ƒè¦ä¹ˆå±äºæŸä¸€å­é›†ï¼Œè¦ä¹ˆä¸å±äºï¼šO(2^n)
 	 * 
 	 * 
-	 * ·½·¨¶ş£º·Çµİ¹éÊµÏÖ   --by http://blog.csdn.net/silent_strings/article/details/48732583
-	 * ÓÃ¶ş½øÖÆµÄ0±íÊ¾ÓĞ£¬1±íÊ¾Ã»ÓĞ£º101,±íÊ¾ÓĞaºÍc£¬Ã»ÓĞb£¬Êä³ö{a,c}
+	 * æ–¹æ³•äºŒï¼šéé€’å½’å®ç°   --by http://blog.csdn.net/silent_strings/article/details/48732583
+	 * ç”¨äºŒè¿›åˆ¶çš„0è¡¨ç¤ºæœ‰ï¼Œ1è¡¨ç¤ºæ²¡æœ‰ï¼š101,è¡¨ç¤ºæœ‰aå’Œcï¼Œæ²¡æœ‰bï¼Œè¾“å‡º{a,c}
 	 */
 
 }
