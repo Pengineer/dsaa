@@ -32,12 +32,12 @@ public class Transform {
         }
         char[] chas1 = str1.toCharArray();
         char[] chas2 = str2.toCharArray();
-        int[] map = new int[256]; //字符总个数256个，初始值为0
+        int[] hashMap = new int[256]; //字符总个数256个，初始值为0，使用数组实现简单哈希表
         for (int i = 0; i < chas1.length; i++) {
-            map[chas1[i]]++;
+        	hashMap[chas1[i]]++;
         }
         for (int i = 0; i < chas2.length; i++) {
-            if (map[chas2[i]]-- == 0) { //先比较，再自减，一个数组解决问题
+            if (hashMap[chas2[i]]-- == 0) { //先比较，再自减，一个数组解决问题
                 return false;
             }
         }

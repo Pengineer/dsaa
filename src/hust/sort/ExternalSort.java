@@ -10,17 +10,17 @@ import java.util.List;
 import java.util.Random;
 
 /**
- * Íâ²¿ÅÅĞò
+ * å¤–éƒ¨æ’åº
  * 
- * ÏÖÓĞ100¸öÊıÒª½øĞĞÅÅĞò£¬ÄÚ´æÏŞÖÆÒ»´ÎÖ»ÄÜ·Å20¸öÊı¡£
+ * ç°æœ‰100ä¸ªæ•°è¦è¿›è¡Œæ’åºï¼Œå†…å­˜é™åˆ¶ä¸€æ¬¡åªèƒ½æ”¾20ä¸ªæ•°ã€‚
  * 
- * Ë¼Â·£º
- * 1£¬½«´óÎÄ¼şÇĞ¸î³ÉÄÚ´æÔÊĞí·¶Î§ÄÚµÄÎÄ¼ş´óĞ¡£¬²¢¶ÔÃ¿Ò»¸öÎÄ¼ş½øĞĞ¿ìËÙÅÅĞò£»
- * 2£¬½«ÅÅĞòºóµÄ¸÷Ğ¡ÎÄ¼şÁ½Á½½øĞĞ¹é²¢ÅÅĞò£¬¹é²¢µÄ¹ı³ÌÖĞÒªÔÚÄÚ´æÂúÖ®Ç°µÄÊı¾İ²»¶ÏË¢µ½´ÅÅÌ£¬¹é²¢µÄ½á¹û·ÅÔÚÒ»¸öĞÂÎÄ¼şÖĞ£¬ÒÀ´Î·´¸´£¬Ö±µ½×îºóµÄÎÄ¼ş¼¯ºÏÖĞÖ»ÓĞÒ»¸öÎÄ¼ş£»
+ * æ€è·¯ï¼š
+ * 1ï¼Œå°†å¤§æ–‡ä»¶åˆ‡å‰²æˆå†…å­˜å…è®¸èŒƒå›´å†…çš„æ–‡ä»¶å¤§å°ï¼Œå¹¶å¯¹æ¯ä¸€ä¸ªæ–‡ä»¶è¿›è¡Œå¿«é€Ÿæ’åºï¼›
+ * 2ï¼Œå°†æ’åºåçš„å„å°æ–‡ä»¶ä¸¤ä¸¤è¿›è¡Œå½’å¹¶æ’åºï¼Œå½’å¹¶çš„è¿‡ç¨‹ä¸­è¦åœ¨å†…å­˜æ»¡ä¹‹å‰çš„æ•°æ®ä¸æ–­åˆ·åˆ°ç£ç›˜ï¼Œå½’å¹¶çš„ç»“æœæ”¾åœ¨ä¸€ä¸ªæ–°æ–‡ä»¶ä¸­ï¼Œä¾æ¬¡åå¤ï¼Œç›´åˆ°æœ€åçš„æ–‡ä»¶é›†åˆä¸­åªæœ‰ä¸€ä¸ªæ–‡ä»¶ï¼›
  */
 public class ExternalSort {
 	
-	private final static int SIZE = 10;//ÁôÒ»¶¨¿Õ¼ä±£Ö¤³ÌĞòÕı³£ÔËĞĞ
+	private final static int SIZE = 10;//ç•™ä¸€å®šç©ºé—´ä¿è¯ç¨‹åºæ­£å¸¸è¿è¡Œ
 
 	public static void main(String[] args) throws Exception {
 		String fileName = "E:\\dsaa\\source.txt";
@@ -29,7 +29,7 @@ public class ExternalSort {
 //		print(result);
 	}
 	
-	//´´½¨Ò»¸öÔ­Ê¼ÎÄ¼ş
+	//åˆ›å»ºä¸€ä¸ªåŸå§‹æ–‡ä»¶
 	public static void initSourceFile(String fileName) throws Exception {
 		File file = new File(fileName); 
 		if(file.exists()) {
@@ -38,36 +38,36 @@ public class ExternalSort {
 		BufferedWriter bw = new BufferedWriter(new FileWriter(file));
 		Random r = new Random();
 		for (int i = 0; i < 100; i++) {
-			bw.write(r.nextInt(100) + "\r\n");  //×îºÃÓÃDataInputStream´úÌæ»ù±¾ÀàĞÍµÄÎÄ¼şĞ´£¬ÒòÎª´Ë´¦²»¼Ó"\r\n"»áÂÒÂë
+			bw.write(r.nextInt(100) + "\r\n");  //æœ€å¥½ç”¨DataInputStreamä»£æ›¿åŸºæœ¬ç±»å‹çš„æ–‡ä»¶å†™ï¼Œå› ä¸ºæ­¤å¤„ä¸åŠ "\r\n"ä¼šä¹±ç 
 		}
 		bw.close();
-		System.out.println("´´½¨Ô­Ê¼ÎÄ¼ş£¡");
+		System.out.println("åˆ›å»ºåŸå§‹æ–‡ä»¶ï¼");
 	}
 	
-	//·Ö¸îÔ­Ê¼ÎÄ¼ş²¢¶ÔĞ¡ÎÄ¼ş½øĞĞ¶àÂ·¿ìËÙÅÅĞò
+	//åˆ†å‰²åŸå§‹æ–‡ä»¶å¹¶å¯¹å°æ–‡ä»¶è¿›è¡Œå¤šè·¯å¿«é€Ÿæ’åº
 	public static List<File> splitAndMultiSort(File file) throws Exception {
 		int[] numbers = new int[SIZE];
 		BufferedReader br = new BufferedReader(new FileReader(file));
-		List<File> files=new ArrayList<File>();//±£´æËùÓĞ·Ö¸îÎÄ¼şµÄÃû³Æ
+		List<File> files=new ArrayList<File>();//ä¿å­˜æ‰€æœ‰åˆ†å‰²æ–‡ä»¶çš„åç§°
 		int index=0;
 		while(true){
 			String num=br.readLine();
-		    if(num == null){//Èç¹û¶ÁÈ¡Íê±Ïºó£¬½øĞĞÒ»´ÎÅÅĞò²¢±£´æ
+		    if(num == null){//å¦‚æœè¯»å–å®Œæ¯•åï¼Œè¿›è¡Œä¸€æ¬¡æ’åºå¹¶ä¿å­˜
 		    	files.add(sortAndSave(numbers, index));
 		    	break;
 		    }
 		    numbers[index]=Integer.valueOf(num);
 		    index++;
 		    if(index == SIZE){
-		    	files.add(sortAndSave(numbers, index));//½«ÄÚ´æÖĞµÄSIZE¸öÊı½øĞĞ¿ìËÙÅÅĞò²¢Ğ´Èë´ÅÅÌÎÄ¼ş
-		    	index=0;//ÖØÖÃindex
+		    	files.add(sortAndSave(numbers, index));//å°†å†…å­˜ä¸­çš„SIZEä¸ªæ•°è¿›è¡Œå¿«é€Ÿæ’åºå¹¶å†™å…¥ç£ç›˜æ–‡ä»¶
+		    	index=0;//é‡ç½®index
 		    }
 		}
-		System.out.println("ÇĞ¸îÎÄ¼ş½øĞĞ¶àÂ·ÅÅĞò½áÊø£¡");
+		System.out.println("åˆ‡å‰²æ–‡ä»¶è¿›è¡Œå¤šè·¯æ’åºç»“æŸï¼");
 		return files;
 	}
 	
-	//¶ÔnumbersÊı×éÊµÊ©¿ìÅÅ£¬½«½á¹û±£´æÔÚ±¾µØÎÄ¼ş
+	//å¯¹numbersæ•°ç»„å®æ–½å¿«æ’ï¼Œå°†ç»“æœä¿å­˜åœ¨æœ¬åœ°æ–‡ä»¶
 	public static File sortAndSave(int[] numbers, int index) throws Exception {
 		quickSort(numbers, 0, index-1);
 		String fileName = "E:\\dsaa\\" + System.currentTimeMillis() + ".txt";
@@ -84,7 +84,7 @@ public class ExternalSort {
 		return file;
 	}
 	
-	//¿ìÅÅ
+	//å¿«æ’
 	public static void quickSort(int[] numbers, int start, int end) {
 		if(start < end) {
 			int i = start, j = end, x = numbers[start];
@@ -104,7 +104,7 @@ public class ExternalSort {
 		}
 	}
 	
-	//ºÏ²¢¶à¸öÎÄ¼ş£¬·µ»Ø×îÖÕºÏ²¢µÄÎÄ¼ş£º½«¼¯ºÏÖĞµÄÎÄ¼şÁ½Á½ºÏ²¢µÃµ½Ò»¸öĞÂÎÄ¼ş£¬Èç´Ë·´¸´½øĞĞÖªµÀ¼¯ºÏÖĞÖ»ÓĞÒ»¸öÎÄ¼ş
+	//åˆå¹¶å¤šä¸ªæ–‡ä»¶ï¼Œè¿”å›æœ€ç»ˆåˆå¹¶çš„æ–‡ä»¶ï¼šå°†é›†åˆä¸­çš„æ–‡ä»¶ä¸¤ä¸¤åˆå¹¶å¾—åˆ°ä¸€ä¸ªæ–°æ–‡ä»¶ï¼Œå¦‚æ­¤åå¤è¿›è¡ŒçŸ¥é“é›†åˆä¸­åªæœ‰ä¸€ä¸ªæ–‡ä»¶
 	public static File mergeFiles(List<File> files) throws Exception {
 		File file1, file2, newFile = new File("");
 		for(int i=0; files.size() >=2; i=0) {
@@ -116,15 +116,15 @@ public class ExternalSort {
 			files.add(newFile);
 		}
 		newFile.renameTo(new File(newFile.getParent() + "\\result.txt"));
-		System.out.println("Íâ²¿ÅÅĞòÍê³É£¡");
+		System.out.println("å¤–éƒ¨æ’åºå®Œæˆï¼");
 		return newFile;
 	}
 	
-	//ºÏ²¢file1ºÍfile2£¬·µ»ØºÏ²¢ºóµÄÎÄ¼şÃû
+	//åˆå¹¶file1å’Œfile2ï¼Œè¿”å›åˆå¹¶åçš„æ–‡ä»¶å
 	public static File mergeTwoFile(File file1, File file2) throws Exception {
 		BufferedReader br1 = new BufferedReader(new FileReader(file1));
 		BufferedReader br2 = new BufferedReader(new FileReader(file2));
-		//´´½¨ºÏ²¢ºóµÄÎÄ¼ş
+		//åˆ›å»ºåˆå¹¶åçš„æ–‡ä»¶
 		String resultFileName = "E:\\dsaa\\" + System.currentTimeMillis() + ".txt";
 		File resultFile = new File(resultFileName);
 		while (resultFile.exists()) {
@@ -132,7 +132,7 @@ public class ExternalSort {
 			resultFile = new File(resultFileName);
 		}
 		BufferedWriter bw = new BufferedWriter(new FileWriter(resultFileName));
-		//¹é²¢ÅÅĞò£¬ÇÒÃ¿¶Á10´Î£¬½«ÄÚ´æÖĞµÄÊı¾İË¢µ½´ÅÅÌ
+		//å½’å¹¶æ’åºï¼Œä¸”æ¯è¯»10æ¬¡ï¼Œå°†å†…å­˜ä¸­çš„æ•°æ®åˆ·åˆ°ç£ç›˜
 		int num1=0, num2=0, cnt =0; 
 		String str1 = br1.readLine();
 		String str2 = br2.readLine();
@@ -183,7 +183,7 @@ public class ExternalSort {
 	}
 	
 	
-	//´òÓ¡ÎÄ¼şÄÚÈİ
+	//æ‰“å°æ–‡ä»¶å†…å®¹
 	public static void print(File file) throws Exception {
 		BufferedReader br = new BufferedReader(new FileReader(file));
 		for(int i=0; i<100; i++) {
