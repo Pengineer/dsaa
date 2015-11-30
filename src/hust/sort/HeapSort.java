@@ -10,6 +10,7 @@ package hust.sort;
  * @author 2015-11-30
  *
  */
+
 public class HeapSort {
 
 	public static void main(String[] args) {
@@ -50,7 +51,7 @@ public class HeapSort {
 		}
 	}
 	
-	//非递归，和递归没啥区别
+	//非递归：和递归没啥区别
 	public static void HeapAdjust_nonrecursion(int[] arr, int node, int len) {
 		int left = left(node);
 		int right = right(node);
