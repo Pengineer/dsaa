@@ -12,11 +12,9 @@ package hust.sort;
  */
 public class HeapSort {
 
-	/**
-	 * @param args
-	 */
 	public static void main(String[] args) {
-		int[] arr = {3,6,2,7,10,5,1,9,12,2};
+//		int[] arr = {3,6,2,7,10,5,1,9,12,2};
+		int[] arr = {1,2,3,10,4,5,6};
 		
 		heapSort(arr, arr.length-1);
 		
@@ -29,26 +27,52 @@ public class HeapSort {
 	public static void createMaxHeap(int[] arr, int len) {
 		//从下往上创建最大堆，叶子节点本身就可以看做是一个最大堆，因此不需考虑
 		for (int i=arr.length/2 -1; i >= 0; i--) {
-			heapify(arr, i, len);
+			HeapAdjust_nonrecursion(arr, i, len);
 		}
 	}
 	
-	//维持堆特性，必须传入三个参数，len在排序时需要
-	public static void heapify(int[] arr, int node, int len) {
+	//递归：维持堆特性，必须传入三个参数，len在排序时需要
+	public static void HeapAdjust_recursion(int[] arr, int node, int len) {
 		int left = left(node);
 		int right = right(node);
 		int max = node;
-		if(left < len && arr[left] > arr[max]) {
+		if(left <= len && arr[left] > arr[max]) {
 			max = left;
 		}
-		if(right < len && arr[right] > arr[max]) {
+		if(right <= len && arr[right] > arr[max]) {
 			max = right;
 		}
 		if(max != node) { //如果最大数不是根，则最大数与根交换，此时，破坏了以最大数为根节点的子树的堆特性，需要对其调整。
 			int tmp = arr[max];
 			arr[max] = arr[node];
 			arr[node] = tmp;
-			heapify(arr, max, len);
+			HeapAdjust_recursion(arr, max, len);
+		}
+	}
+	
+	//非递归，和递归没啥区别
+	public static void HeapAdjust_nonrecursion(int[] arr, int node, int len) {
+		int left = left(node);
+		int right = right(node);
+		int max = node;
+		while(max <= len) {
+			if(left <= len && arr[left] > arr[max]) {
+				max = left;
+			}
+			if(right <= len && arr[right] > arr[max]) {
+				max = right;
+			}
+			if(max != node) { 
+				int tmp = arr[max];
+				arr[max] = arr[node];
+				arr[node] = tmp;
+				
+				node = max;
+				left = left(max);
+				right = right(max);
+			} else { //必加
+				break;
+			}
 		}
 	}
 	
@@ -60,7 +84,7 @@ public class HeapSort {
 			int tmp = arr[0];
 			arr[0] = arr[len];
 			arr[len] = tmp;
-			heapify(arr, 0, --len); //不断取走根，缩小堆的大小
+			HeapAdjust_nonrecursion(arr, 0, --len); //不断取走根，缩小堆的大小
 		}
 	}
 	

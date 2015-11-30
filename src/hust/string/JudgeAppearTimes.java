@@ -1,5 +1,10 @@
 package hust.string;
 
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
+import java.util.Map.Entry;
+
 /**
  * 如果数组长度为N，判断是否数组中所有的数字都只出现一次。按下列两个
  * 要求分别实现这一功能： 
@@ -13,7 +18,7 @@ package hust.string;
  * 要求二的解法： 
  * 1，先排序，排序后相同的字符会贴在⼀起。 
  * 2，再遍历一次str进⾏检查即可。 
-  *   关键在于对各种排序算法的深度理解。
+ *    关键在于对各种排序算法的深度理解。
  * 
  * @author 2015-11-29
  *
@@ -23,7 +28,11 @@ public class JudgeAppearTimes {
 	public static void main(String[] args) {
 		int[] arr = {1,2,3,10,4,5,6};
 		System.out.println(judge1(arr, arr.length));
-		System.out.println(judge2(arr, arr.length));
+		
+//		System.out.println(judge2(arr, arr.length));
+		for (int i = 0; i < arr.length; i++) {
+			System.out.print(arr[i] + " ");
+		}
 	}
 	
 	//要求一解法：哈希表实现，时间复杂度为O(N)，额外空间复杂度是O(N)。
@@ -31,13 +40,17 @@ public class JudgeAppearTimes {
 //		int[] hashMap = new int[256]; 简单的哈希计频是不可能的，这里是数字，不是字符。（字符最多256个，数字是无限的）
 //		排序也是行不通的，因为没有时间复杂度是O(N)的排序算法
 		
-		int[] hashTable = new int[N];
+		HashMap<Integer, Integer> ht = new HashMap<Integer, Integer>();
 		for (int i = 0; i < arr.length; i++) {
-			hashTable[arr[i]%N]++;
+			ht.put(i, ht.get(arr[i]) == null ? 1 : (ht.get(arr[i]) + 1));
 		}
-		for (int i = 0; i < hashTable.length; i++) {
-			if(hashTable[i] > 1) return false;
-		}
+		
+		Iterator<Entry<Integer, Integer>> iterator = ht.entrySet().iterator();
+		while (iterator.hasNext()) { 
+			Map.Entry entry = (Map.Entry) iterator.next(); 
+			int val = (Integer) entry.getValue();
+			if(val != 1) return false;
+		} 
 		
 		return true;
 	}
@@ -52,24 +65,49 @@ public class JudgeAppearTimes {
 	}
 	
 	public static void sortArray(int[] arr, int start, int end) {
-		
+		buildMaxHeap(arr, end);
+		while(end > 0) {
+			int tmp = arr[0];
+			arr[0] = arr[end];
+			arr[end] = tmp;
+			heapAdjust(arr, 0, --end);
+		}
 	}
 	
-//	public static void sortArray(int[] arr, int start, int end) {
-//		if(start < end) {
-//			int low = start, high = end, privot = arr[start];
-//			while(low < high) {
-//				while(low < high && arr[high] >= privot)
-//					high--;
-//				arr[low] = arr[high];
-//				while(low < high && arr[low] <= privot)
-//					low++;
-//				arr[high] = arr[low];
-//			}
-//			arr[low] = privot;
-//			sortArray(arr, start, low-1);
-//			sortArray(arr, low+1, end);
-//		}
-//	}
+	public static void buildMaxHeap(int[] arr, int len) {
+		for(int i = len/2 -1; i>=0; i--) {
+			heapAdjust(arr, i, len);
+		}
+	}
+	
+	public static void heapAdjust(int[] arr, int node, int len) {
+		int left = getLeftChild(node);
+		int right = getRightChild(node);
+		int max = node;
+		while(max <= len) {
+			if(left <= len && arr[left] > arr[max])
+				max = left;
+			if(right <= len && arr[right] > arr[max])
+				max = right;
+			if(max != node) {
+				int tmp = arr[max];
+				arr[max] = arr[node];
+				arr[node] = tmp;
+				
+				node = max;
+				left = getLeftChild(node);
+				right = getRightChild(node);
+			} else
+				break;
+		}
+	}
+	
+	public static int getLeftChild(int i) {
+		return i*2 +1;
+	}
+	
+	public static int getRightChild(int i) {
+		return i*2 +2;
+	}
 	
 }
