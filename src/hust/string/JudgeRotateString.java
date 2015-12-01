@@ -24,6 +24,9 @@ public class JudgeRotateString {
 	}
 	
 	public static boolean judge(String str1, String str2) {
+		if(str1.length() != str2.length() || str1 == null || str2 == null)
+			return false;
+		
 		String tmp = str2 + str2;
 		if(tmp.contains(str1)) { //contains可使用KMP算法
 			return true;
