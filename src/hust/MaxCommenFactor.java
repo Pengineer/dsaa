@@ -3,17 +3,17 @@ package hust;
 import java.util.ArrayList;
 
 /**
- * »ñÈ¡Á½¸öÊýµÄ×î´ó¹«ÒòÊý
+ * èŽ·å–ä¸¤ä¸ªæ•°çš„æœ€å¤§å…¬å› æ•°
  */
 public class MaxCommenFactor {
 
 	public static void main(String[] args) {
-		//¼ÙÉèm>n
+		//å‡è®¾m>n
 		System.out.println(getMaxCommenFactor1(648, 282));
 		System.out.println(getMaxCommenFactor2(648, 282));
 	}
 	
-	//·½·¨Ò»£ºÅ·¼¸ÀïµÃËã·¨£¬O(logn)
+	//æ–¹æ³•ä¸€ï¼šæ¬§å‡ é‡Œå¾—ç®—æ³•ï¼ŒO(logn)
 	public static int getMaxCommenFactor1(int m, int n) {
 		while (n > 0) {
 			int rem = m % n;
@@ -23,7 +23,7 @@ public class MaxCommenFactor {
 		return m;
 	}
 	
-	//·½·¨¶þ£ºÇóµÃ½ÏÐ¡ÊýµÄËùÓÐ¹«ÒòÊý£¬ÔÚÕâÐ©ÅÐ¶ÏÊÇ²»ÊÇ½Ï´óÊýµÄ¹«ÒòÊý£¬O(n)
+	//æ–¹æ³•äºŒï¼šæ±‚å¾—è¾ƒå°æ•°çš„æ‰€æœ‰å…¬å› æ•°ï¼Œåœ¨è¿™äº›åˆ¤æ–­æ˜¯ä¸æ˜¯è¾ƒå¤§æ•°çš„å…¬å› æ•°ï¼ŒO(n)
 	public static int getMaxCommenFactor2(int m, int n) {
 		ArrayList<Integer> list = new ArrayList<Integer>();
 		int cnt=0;

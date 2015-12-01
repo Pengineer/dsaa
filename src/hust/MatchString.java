@@ -1,7 +1,7 @@
 package hust;
 
 /**
- * Ä£Ê½Æ¥Åä£º×Ó´®µÄ¶¨Î»²Ù×÷
+ * æ¨¡å¼åŒ¹é…ï¼šå­ä¸²çš„å®šä½æ“ä½œ
  */
 
 public class MatchString {
@@ -13,14 +13,14 @@ public class MatchString {
 		System.out.println(pos);
 	}
 	
-	//Ê±¼ä¸´ÔÓ¶È£ºo(m + n)£¬mÊÇÖ÷´®³¤¶È£¬nÊÇ×Ó´®/Ä£Ê½³¤¶È
-	//Èç¹ûÊÇÈ«²¿ÊÇ01£¬ÄÇÃ´×î»µµÄÇé¿öÊÇ0(m * n)
+	//æ—¶é—´å¤æ‚åº¦ï¼šo(m + n)ï¼Œmæ˜¯ä¸»ä¸²é•¿åº¦ï¼Œnæ˜¯å­ä¸²/æ¨¡å¼é•¿åº¦
+	//å¦‚æœæ˜¯å…¨éƒ¨æ˜¯01ï¼Œé‚£ä¹ˆæœ€åçš„æƒ…å†µæ˜¯0(m * n)
 	public static int match(String father, String child) {
 		int i=0, j=0;
 		while(i<father.length() && j<child.length()) {
 			if(father.charAt(i) == child.charAt(j)) {
 				i++;j++;
-			} else { //¹Ø¼üÊÇÈ·¶¨Æ¥ÅäÒ»°ë²»³É¹¦ºóµÄ»ØÍËµã
+			} else { //å…³é”®æ˜¯ç¡®å®šåŒ¹é…ä¸€åŠä¸æˆåŠŸåçš„å›é€€ç‚¹
 				j=0;
 				i=i-j+1;
 			}
@@ -31,5 +31,5 @@ public class MatchString {
 		return -1;
 	}
 	
-	//KMPËã·¨£¬±È½Ï¸´ÔÓ¡££¨ÂÔ£©
+	//KMPç®—æ³•ï¼Œæ¯”è¾ƒå¤æ‚ã€‚ï¼ˆç•¥ï¼‰
 }

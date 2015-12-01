@@ -1,7 +1,7 @@
 package hust;
 
 /**
- * ÃİÔËËã
+ * å¹‚è¿ç®—
  * 
  * x^n
  */
@@ -12,7 +12,7 @@ public class PowerOperation {
 		System.out.println(doPower2(2, 3));
 	}
 	
-	//·½·¨Ò»£ºÊ±¼ä¸´ÔÓ¶ÈO(n)
+	//æ–¹æ³•ä¸€ï¼šæ—¶é—´å¤æ‚åº¦O(n)
 	public static int doPower1(int num, int index) {
 		if (index==1) {
 			return num;
@@ -21,7 +21,7 @@ public class PowerOperation {
 		}
 	}
 	
-	//·½·¨¶ş£º·Ö°ë¼ÆËã£¬x^31 = (x^2)^15 * x ; x^30 = (x^2)^15£¬Ê±¼ä¸´ÔÓ¶ÈO(logn)
+	//æ–¹æ³•äºŒï¼šåˆ†åŠè®¡ç®—ï¼Œx^31 = (x^2)^15 * x ; x^30 = (x^2)^15ï¼Œæ—¶é—´å¤æ‚åº¦O(logn)
 	public static int doPower2(int num, int index) {
 		if (index == 0) {
 			return 1;
