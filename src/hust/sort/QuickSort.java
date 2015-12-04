@@ -25,15 +25,18 @@ public class QuickSort {
 	}
 	
 	public static void QuickSortMethod(int[] a, int low, int high) {//不断缩小范围
+		if(a == null || low > high || low < 0 || high < 0) {
+			return;
+		}
 		int pos;
 		if(low < high) {
-			pos = findFirstElementLocation(a, low, high);  //分模块实现思想
+			pos = Partition(a, low, high);  //分模块实现思想
 			QuickSortMethod(a, low, pos-1);
 			QuickSortMethod(a, pos+1, high);
 		}
 	}
 	
-	public static int findFirstElementLocation(int[] a, int low, int high) {
+	public static int Partition(int[] a, int low, int high) {
 		int guard = a[low];
 		while(low < high) {
 			while(low < high && a[high] >= guard) { //必须加=，否则a[low] = a[high]赋值后如果出现和guard相同的元素，将死循环
@@ -54,6 +57,10 @@ public class QuickSort {
 	//整合代码
 	public static void quick_sort(int s[], int l, int h)
 	{
+		if(s == null || l > h || l < 0 || h < 0) {
+			return;
+		}
+		
 	    if (l < h)
 	    {
 	        int i = l, j = h, x = s[l];
