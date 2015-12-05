@@ -1,4 +1,4 @@
-package hust.random;
+package hust.multisystem;
 
 /**
  * 给定一个等概率随机产生1~5的随机函数rand1To5如下：

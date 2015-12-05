@@ -1,4 +1,4 @@
-package hust.random;
+package hust.multisystem;
 
 /**
  * 给定一个以p概率产生0，以1-p概率产生1的随机函数rand01p如下：

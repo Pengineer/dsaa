@@ -9,7 +9,7 @@ import java.util.Stack;
  *
  */
 
-public class StackDemo {
+public class StackDemo1 {
 	
 	public static void main(String[] args) {
 //		process1();
@@ -46,7 +46,7 @@ public class StackDemo {
 		}
 	}
 	
-//	基于递归的代码看起来很简洁，但有个问题：当链表非常长的时候，就会导致函数滴啊用的层级很深，
+//	基于递归的代码看起来很简洁，但有个问题：当链表非常长的时候，就会导致函数调用的层级很深，
 //	从而有可能导致函数调用栈溢出。显式用栈基于循环实现的代码的鲁棒性要好一些。
 	
 }

@@ -1,4 +1,4 @@
-package hust.random;
+package hust.multisystem;
 
 /**
  * 了解：GenerateRandom1和GenerateRandom2的推广
