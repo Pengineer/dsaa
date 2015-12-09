@@ -47,7 +47,7 @@ public class JudgeAppearTimes {
 		
 		Iterator<Entry<Integer, Integer>> iterator = ht.entrySet().iterator();
 		while (iterator.hasNext()) { 
-			Map.Entry entry = (Map.Entry) iterator.next(); 
+			Map.Entry<Integer, Integer> entry = (Map.Entry<Integer, Integer>) iterator.next(); 
 			int val = (Integer) entry.getValue();
 			if(val != 1) return false;
 		} 

@@ -3,7 +3,6 @@ package hust.other;
 import hust.tree.Node;
 
 import java.util.ArrayDeque;
-import java.util.LinkedList;
 import java.util.Queue;
 
 /**

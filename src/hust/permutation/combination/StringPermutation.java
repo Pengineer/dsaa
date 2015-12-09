@@ -5,6 +5,7 @@ package hust.permutation.combination;
  * 
  * 题目：输入一个字符串，打印出该字符串中字符的所有排列。例如输入abc，则打印abc,acb,bac,bca,cab,cba。
  * 
+ * @see 对应的组合问题 StringCombination
  * @author 2015-12-09
  *
  */
