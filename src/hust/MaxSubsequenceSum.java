@@ -61,9 +61,15 @@ public class MaxSubsequenceSum {
 		return max;
 	}
 	
-	//方法四：动态规划，方法三的变形，容易理解一些，O(n)
+	/*
+	 * 方法四：动态规划，方法三的变形，容易理解一些，O(n)。
+	 * 
+	 * 记f(i)表示以第i个数字结尾的子数组的最大和，则：
+	 * f(i) ={ arr[i]               i=0或则f(i-1)<=0
+	 *      ={ f(i-1) + arr[i]      i!=0并且f(i-1)>0
+	 */
 	public static int[] getMaxSubsequenceSum4(int[] a) {
-	    int max=0, tmp=0;  //tmp记录前i-1个元素的最大子串和，max记录实际最大值
+	    int max=0, tmp=0;  //tmp = f(i)， max为max(f(i))。
 	    int bStart=0,bEnd=0;  //最大子串的起始和结束角标
 	    int[] result = new int[3];
 	    for (int i=0; i<a.length; i++) {

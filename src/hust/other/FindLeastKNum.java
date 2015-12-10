@@ -28,7 +28,8 @@ public class FindLeastKNum {
 	//解法一
 	public static void getLeastKNum1(int[] arr, int k, int len) {
 		if(arr == null || len < k) {
-			throw new RuntimeException("非法输入");
+			System.out.println("非法输入");
+			return;
 		}
 		int start =0;
 		int end =len-1;
@@ -65,6 +66,7 @@ public class FindLeastKNum {
 	}
 	
 	/*
+	 * 解法二：
 	 * 定义一个容器来存放最小的k个数。当容器满后，需要做三件事：找出k个数中最大的；可能删除最大数；可能插入新数。
 	 * 找集合中最大的数很容易就想到堆排序，但是现场写一个可能时间不够，这里直接用Java提供的优先队列PriorityQueue，
 	 * 它的底层就是基于堆结构实现的，自动排序所有元素，默认队首最小，队尾最大，这显然需要重写compare方法进行倒排。
@@ -74,7 +76,8 @@ public class FindLeastKNum {
 	 */
 	public static void getLeastKNum2(int[] arr, int k, int len) {
 		if(arr == null || len < k) {
-			throw new RuntimeException("非法输入");
+			System.out.println("非法输入");
+			return;
 		}
 		
 		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(k, new Comparator<Integer>() {
