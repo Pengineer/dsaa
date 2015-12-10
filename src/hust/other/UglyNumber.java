@@ -33,7 +33,7 @@ public class UglyNumber {
 		int i =0;
 		while(count < index) {
 			if(isUgly(++i)) {
-				count ++;
+				count++;
 			}
 		}
 		return i;
