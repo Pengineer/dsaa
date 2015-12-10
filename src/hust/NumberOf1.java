@@ -23,7 +23,7 @@ public class NumberOf1 {
 		System.out.println(getNumberOf1_2(10000));
 	}
 	
-	//解法一
+	//解法一:时间复杂度O(n)
 	public static int getNumberOf1_1(int n) {
 		if(n < 0) {
 			System.out.println("Invalid paramter");
@@ -44,8 +44,12 @@ public class NumberOf1 {
 		return count;
 	}
 	
-	//解法二
+	//解法二:时间复杂度O(logn)
 	public static int getNumberOf1_2(int n) {
+		if(n < 0) {
+			System.out.println("Invalid parameter");
+			return -1;
+		}
 		int len =getLength(n);
 		int first = getFirst(n);
 		if (len == 1 && first == 0) return 0; //n为0
