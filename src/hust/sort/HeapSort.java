@@ -69,8 +69,8 @@ public class HeapSort {
 				arr[node] = tmp;
 				
 				node = max;
-				left = left(max);
-				right = right(max);
+				left = left(node);
+				right = right(node);
 			} else { //必加
 				break;
 			}

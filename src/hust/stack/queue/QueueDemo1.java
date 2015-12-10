@@ -1,4 +1,4 @@
-package hust.other;
+package hust.stack.queue;
 
 import hust.tree.Node;
 
@@ -16,6 +16,8 @@ import java.util.Queue;
  *       左右节点放入队列中，然后获取队列的第一个元素2，同时将2的左右节点放入队列中。。。
  * 
  * @author 2015-12-08
+ * 
+ * 补充：使用优先队列获取容器最大值 @see FindLeastKNum (解法二)
  *
  */
 public class QueueDemo1 {

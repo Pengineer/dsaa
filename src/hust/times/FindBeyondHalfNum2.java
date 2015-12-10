@@ -7,7 +7,7 @@ package hust.times;
  * @author 2015-11-30
  *
  */
-public class FindBeyondHalfNum {
+public class FindBeyondHalfNum2 {
 
 	public static void main(String[] args) {
 		int [] arr = {1,2,3,2,1,2,1,3,1,5};

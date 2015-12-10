@@ -4,6 +4,8 @@ import java.util.ArrayList;
 
 /**
  * 获取两个数的最大公因数
+ * 
+ * 更多方法有待深入。。。（求最小公倍数）
  */
 public class MaxCommenFactor {
 

@@ -1,4 +1,4 @@
-package hust.other;
+package hust.stack.queue;
 
 import java.util.Stack;
 
