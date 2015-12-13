@@ -60,7 +60,7 @@ public class TraverseTree {
 		}  
 	}
 	
-	/** 非递归实现前序遍历 */  
+	/** 非递归实现前序遍历 */
 	protected static void iterativePreorder(Node p) {  
 		Stack<Node> stack = new Stack<Node>();  
 		if (p != null) {  
