@@ -23,13 +23,16 @@ public class FindTwoNumByAppointedSum {
 	 * 则前面的指针后移。时间复杂度O(n)。
 	 */
 	public static void find(int[] arr, int length, int sum) {
+		if(arr == null || length <= 0) {
+			return;
+		}
 		//定义两个指针
 		int forward = 0;
 		int afterward = length - 1;
 		while(forward < afterward) {
 			int tempSum = arr[forward] + arr[afterward];
 			if(tempSum == sum) {
-				System.out.println(arr[forward] + " + " + arr[afterward]);
+				System.out.println("arr[" + forward +"] + " + "arr[" + afterward +"] = " + arr[forward] + " + " + arr[afterward]);
 				break;
 			} else if(tempSum > sum) {
 				afterward--;
