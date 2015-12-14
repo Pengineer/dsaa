@@ -18,7 +18,7 @@ package hust.times;
  *
  */
 
-public class FindNumberOfK {
+public class FindTimesOfNumber {
 
 	public static void main(String[] args) {
 		int[] arr = {3,3,3,3,4,6,8,8,9};
