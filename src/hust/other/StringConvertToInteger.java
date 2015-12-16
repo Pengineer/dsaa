@@ -43,7 +43,7 @@ public class StringConvertToInteger {
 			while(i < c.length) {
 				if(c[i] >= '0' && c[i] <= '9') {
 					num = num * 10 + flag * (c[i] - '0'); //转换的核心算法
-					if((flag == 1 && num > 0x7fffffff) || (flag == -1 && num < 0x80000000)) { //超出范围
+					if((flag == 1 && num > 0x7fffffff) || (flag == -1 && num < 0x80000000)) { //超出范围（正整数的最大值是0x7fff ffff，最小的负整数是0x8000 0000）
 						num =0;
 						break;
 					}
@@ -58,9 +58,9 @@ public class StringConvertToInteger {
 			}
 		}
 		
-//		if (status == INVALID) {
+		if (status == INVALID) {
 //			throw new RuntimeException("Invalid parameter!");
-//		}
+		}
 		
 		return num;
 	}
