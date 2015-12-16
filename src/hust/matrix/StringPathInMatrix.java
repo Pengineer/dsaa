@@ -33,27 +33,32 @@ package hust.matrix;
 public class StringPathInMatrix {
 
 	public static void main(String[] args) {
-		
+		char[][] matrix = {{'a', 'b', 'c', 'e'},{'s', 'f', 'c', 's'},{'a', 'd', 'e', 'e'}};
+		System.out.println(hasPath(matrix, 3, 4, "bcced".toCharArray()));
+		System.out.println(hasPath(matrix, 3, 4, "abcb".toCharArray()));
 	}
 	
 	/**
-	 * 
-	 * @param matrix
-	 * @param rows
-	 * @param cols
-	 * @param str
+	 * 指定路径的起始点
+	 * @param matrix  输入矩阵
+	 * @param rows    矩阵行数
+	 * @param cols    矩阵列数
+	 * @param str     输入字符串
 	 * @return
 	 */
-	public static boolean hasPath(int[][] matrix, int rows, int cols, String str) {
+	public static boolean hasPath(char[][] matrix, int rows, int cols, char[] str) {
+		// 参数校验
 		if(matrix == null || rows < 1 || cols < 1 || str == null) {
 			return false;
 		}
 		
+		// 声明矩阵元素访问数组并初始化
 		boolean[] visited = new boolean[rows * cols];
 		for (int i = 0; i < visited.length; i++) {
 			visited[i] = false;
 		}
 		
+		// 遍历矩阵，指定矩阵中每一个元素为起始点
 		int[] pathLength = {0};
 		for (int row = 0; row < rows; row++) {
 			for (int col = 0; col < cols; col++) {
@@ -67,20 +72,41 @@ public class StringPathInMatrix {
 	}
 
 	/**
-	 * 
-	 * @param matrix
-	 * @param rows
-	 * @param cols
-	 * @param row
-	 * @param col
-	 * @param str
-	 * @param pathLength
-	 * @param visited
-	 * @return
+	 * 使用回溯法以（row, col）为起点开始匹配
+	 * @param matrix      输入矩阵
+	 * @param rows        矩阵行数
+	 * @param cols        矩阵列数
+	 * @param row         当前元素的行坐标
+	 * @param col         当前元素的列坐标
+	 * @param str         输入字符串
+	 * @param pathLength  已经处理的str中字符个数
+	 * @param visited     访问标记数组
+	 * @return            是否找到 true是，false否
 	 */
-	public static boolean hasPathCore(int[][] matrix, int rows, int cols,
-			int row, int col, String str, int[] pathLength, boolean[] visited) {
-		// TODO Auto-generated method stub
-		return false;
+	public static boolean hasPathCore(char[][] matrix, int rows, int cols,
+			int row, int col, char[] str, int[] pathLength, boolean[] visited) {
+		// 全部匹配，返回true
+		if(str.length == pathLength[0]) {
+			return true;
+		}
+		boolean hasPath = false;
+		if(row >= 0 && row < rows && col >= 0 && col < cols    // 当前传递的元素是否合法（越界）
+				    && matrix[row][col] == str[pathLength[0]]  // 单字符匹配成功
+				    && !visited[row * cols + col]) {           // 而且本次匹配过程中没有被访问过
+			++pathLength[0];
+			visited[row * cols + col] = true;
+			//匹配下一个元素
+			hasPath = hasPathCore(matrix, rows, cols, row, col - 1, str, pathLength, visited)
+				   || hasPathCore(matrix, rows, cols, row, col + 1, str, pathLength, visited)
+				   || hasPathCore(matrix, rows, cols, row - 1, col, str, pathLength, visited)
+				   || hasPathCore(matrix, rows, cols, row + 1, col, str, pathLength, visited);
+			//当前元素在四个方向上匹配下一个元素均失败，回退到当前元素的上一个元素
+			if(!hasPath) {
+				pathLength[0]--;
+				visited[row * cols + col] = false;
+			}
+		}
+		
+		return hasPath;
 	}
 }
