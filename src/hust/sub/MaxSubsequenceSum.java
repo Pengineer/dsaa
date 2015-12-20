@@ -1,4 +1,4 @@
-package hust;
+package hust.sub;
 
 /**
  * 求和最大的子串，并输出其和
