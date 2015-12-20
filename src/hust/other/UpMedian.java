@@ -24,8 +24,10 @@ package hust.other;
 public class UpMedian {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-
+		int[] arr1 = {1,2,3,4};
+		int[] arr2 = {3,4,5,6};
+		System.out.println(getUpMedian(arr1, arr2));
+		System.out.println(findProcess2(arr1, arr1.length, arr2, arr2.length));
 	}
 
 	//方式一：递归实现
@@ -73,6 +75,8 @@ public class UpMedian {
 			} else {  //两中位数相同，那么整体中位数就是该中位数
 				return arr1[mid1];
 			}
+			mid1 = (start1 + end1) >> 1;
+			mid2 = (start2 + end2) >> 1;
 			offset = ((end1 - start1 + 1) & 1) ^ 1;
 		}
 		return Math.min(arr1[start1], arr2[start2]);
