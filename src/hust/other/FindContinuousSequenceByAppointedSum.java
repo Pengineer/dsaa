@@ -26,9 +26,8 @@ public class FindContinuousSequenceByAppointedSum {
 		
 		int small = 1;
 		int big = 2;
-		int mid = (small + big) /2;
 		int tempSum = small + big;
-		while(small < mid) {  //while(small < big) 没必要
+		while(small < big) {
 			if(tempSum == sum) {
 				System.out.println(small + " ~ " + big);
 				big++;

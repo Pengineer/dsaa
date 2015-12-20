@@ -13,7 +13,9 @@ package hust.sub;
 public class MaxSubsequenceProduct {
 
 	public static void main(String[] args) {
-		
+		double[] arr = {-2.5, 4, 0, 3, 0.5, 8, -1};
+		System.out.println(getMaxProduct(arr, arr.length));
+		System.out.println(getMax(arr, arr.length));
 	}
 	
 	/*
@@ -39,6 +41,20 @@ public class MaxSubsequenceProduct {
 			result = Math.max(result, max);
 		}
 		return result;
+	}
+	
+	//不得分解法
+	public static double getMax(double arr[],int length) { 
+		double max=0; 
+		int i,j; 
+		for(j=0;j<length-1;j++) { 
+			double multi=arr[j]; 
+			for(i=j+1;i<length;i++) { 
+				multi*=arr[i]; 
+				if(multi>max) max=multi; 
+			} 
+		} 
+		return max; 
 	}
 
 }
