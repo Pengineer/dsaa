@@ -66,7 +66,7 @@ public class TotalNodes {
 		if (currentDepth == depth) {
 			return 1;
 		}
-		if (mostLeftLevel(node.right, currentDepth + 1) == depth) { //如果node的右结点的最左节点为的深度在整个树中的深度为h，那么node的左子树一定是一个满二叉树，且树的最后一层在整个树的h层
+		if (mostLeftLevel(node.right, currentDepth + 1) == depth) { //如果node的右子树的最左节点的深度在整个树中的深度为h，那么node的左子树一定是一个满二叉树，且树的最后一层在整个树的h层
 			return (1 << (depth - currentDepth)) + getNum(node.right, currentDepth + 1, depth); //1 << (h - l)即为node的左子树（满二叉树）的结点和 + node结点；getNum(node.right, currentDepth + 1, depth)为递归求node的右子树结点和  
 		} else {
 			return (1 << (depth - currentDepth - 1)) + getNum(node.left, currentDepth + 1, depth); //否则，node的右子树是比左子树少一层的满二叉树（表达式前面部分），node的左子树的最后一层没有满，需要再次递归求
@@ -74,7 +74,7 @@ public class TotalNodes {
 	}
 	
 	/**
-	 * 获取以node为根节点的左子树的在整个树中的深度
+	 * 获取以node为根节点的左子树在整个树中的深度
 	 * @param node   当前结点
 	 * @param level  当前结点在整个树中的深度
 	 * @return
