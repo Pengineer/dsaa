@@ -1,5 +1,7 @@
 package hust.link;
 
+import java.util.Hashtable;
+
 /**
  * 如何得到链表中第一个在环里面的结点
  * 
@@ -53,11 +55,12 @@ public class ObtainFirstNodeOfCircleLink {
 		node10.next = node5;
 		
 		System.out.println(obtain(header).value);
+		System.out.println(method2(header).value);
 	}
 	
 	//必须给我头结点
 	public static Node obtain(Node header) {
-		if (header == null) {
+		if (header == null || header.next == null) {
 			throw new RuntimeException("Invald parameter");
 		}
 		
@@ -88,6 +91,26 @@ public class ObtainFirstNodeOfCircleLink {
 				break;
 		}
 		return p;
+	}
+	
+	// 方法二：利用hash表，额外空间复杂度O(n)
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	public static Node method2(Node head) {
+		if(head == null) {
+			return null;
+		}
+		
+		Hashtable table = new Hashtable();
+		Node next = head;
+		while(next != null) {
+			if (table.get(next) == null) {
+				table.put(next, 1);
+				next = next.next;
+			} else {
+				return next;
+			}
+		}
+		return null;
 	}
 	
 }

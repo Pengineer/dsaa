@@ -92,6 +92,14 @@ public class JudgeLinkPlalindrome {
 			}
 		}
 		
+		// 来自牛客网，找中间元素
+//		Node n1 = header;
+//		Node n2 = header;
+//		while (n2.next != null && n2.next.next != null) { // find mid node
+//			n1 = n1.next; // n1 -> mid
+//			n2 = n2.next.next; // n2 -> end
+//		}
+		
 		Stack<Integer> stack = new Stack<Integer>();
 		if(isOdd) {
 			stack.push(slow.value); //补一个
