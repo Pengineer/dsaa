@@ -19,6 +19,9 @@ public class MaxIntegratableSubArray {
 
 	//观察可整合数组的特点：1，没有重复元素；2，最大值-最小值+1=数组的长度
 	public static int getMaxLength(int[] arr) {
+		if(arr == null || arr.length == 0) {
+			return 0;
+		}
 		HashSet<Integer> set = new HashSet<Integer>();// hash表判断重复元素（哈希表的增删操作时间复杂度可看做O(1)）
 		int len =0;
 		for(int i=0; i<arr.length; i++) { // 以i为起点，往后扩
