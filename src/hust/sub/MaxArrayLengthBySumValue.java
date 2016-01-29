@@ -1,4 +1,4 @@
-package hust;
+package hust.sub;
 
 import java.util.HashMap;
 
