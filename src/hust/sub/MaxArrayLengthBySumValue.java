@@ -15,6 +15,7 @@ import java.util.HashMap;
  * 问题描述：给定一个数组 arr，该数组无序，每个值只有1或者0两种取值。求 arr 所有子数组中0和1个数相等的最长子数组长度。
  * 解法：可以把原数组中的0变成-1，1保持不变，最终问题求累加和为0的最长子数组。
  * 
+ * @see MaxArrayLengthBySumValue_2
  * @author liangjian
  * @since 2016-01-29
  * 
