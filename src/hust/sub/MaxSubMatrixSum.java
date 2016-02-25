@@ -19,18 +19,18 @@ public class MaxSubMatrixSum {
 			return 0;
 		}
 		int max = Integer.MIN_VALUE;
-		int[] temp = new int[row]; // 记录第i行到第j行，每一列元素的和
+		int[] temp = new int[col]; // 记录第i行到第j行，每一列元素的和
 		clear(temp);
 		
-		for(int i = 0 ;i < col; i++) {
+		for(int i = 0 ;i < row; i++) {
 			for(int j = i; j < row; j++) {
 				//滚动求第i行到第j行，每一列元素的和
-				for(int k = 0; k < row; k++) {
+				for(int k = 0; k < col; k++) {
 					temp[k] += arr[j][k];
 				}
 				//利用一维数组求最大子数组的方式求max
 				int cur = 0;
-				for(int k=0; k < row; k++) {
+				for(int k=0; k < col; k++) {
 					cur += temp[k];
 					max = Math.max(max, cur);
 					cur = cur < 0 ? 0 : cur;

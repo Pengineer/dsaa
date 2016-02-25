@@ -3,7 +3,7 @@ package hust.other;
 /**
  * 找到无序数组中第二大的数
  * 
- * @author 2015-12-15
+ * @since 2015-12-15
  *
  */
 public class FindSecondBigNum {

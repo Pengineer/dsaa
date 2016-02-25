@@ -61,8 +61,8 @@ public class UpMedian {
 			throw new RuntimeException("Your arr is invalid!");
 		}
 		
-		int start1= 0, end1 = len1-1;
-		int start2 = 0, end2 = len2 -1;
+		int start1 = 0, end1 = len1 - 1;
+		int start2 = 0, end2 = len2 - 1;
 		int mid1 = (start1 + end1) >> 1, mid2 = (start2 + end2) >> 1;
 		int offset = ((end1 - start1 + 1) & 1) ^ 1;  //判断奇偶数
 		while(start1 != end1) {

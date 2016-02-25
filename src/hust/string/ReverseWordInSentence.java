@@ -5,7 +5,7 @@ package hust.string;
  * 例如输入 "I am a student"，输出"student a am I".
  * 
  * @see RotateString
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class ReverseWordInSentence {

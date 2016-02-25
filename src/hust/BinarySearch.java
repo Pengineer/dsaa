@@ -8,14 +8,14 @@ package hust;
 public class BinarySearch {
 
 	public static void main(String[] args) {
-		int[] a = {1,3,5,7,9,11,13,15,17,19};
-		boolean isExist = Bin_Search_2(a, 15);
+		int[] a = {1,3,5};
+		boolean isExist = Bin_Search(a, 5);
 		System.out.println(isExist);
 	}
 	
 	//非递归: O(logn)
 	public static boolean Bin_Search(int[] a, int key) {
-		int low=0, high=a.length;
+		int low=0, high=a.length-1;
 		while(low <= high) {
 			int mid = (low+high)/2;
 			if (key == a[mid]) {

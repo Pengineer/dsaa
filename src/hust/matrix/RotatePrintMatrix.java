@@ -5,7 +5,7 @@ package hust.matrix;
  * 
  * 关键：左上角和右下角来确定一个矩阵
  * 
- * @author 2015-11-28
+ * @since 2015-11-28
  *
  */
 public class RotatePrintMatrix {

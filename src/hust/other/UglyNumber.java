@@ -11,7 +11,7 @@ package hust.other;
  * 解法二：
  * 以空间换时间，后面的丑数都可以由前面的丑数乘以2/3/5得到。
  * 
- * @author 2015-12-10
+ * @since 2015-12-10
  *
  */
 
@@ -58,8 +58,8 @@ public class UglyNumber {
 	 *       肯定已经在数组中了）
 	 *       
 	 *       关键的机智点：每次增加一个元素都要重新记录pMultiply2的位置，这个位置的元素是数组中乘以2后大于数组
-	 *                    中最后一个丑数的最小丑数。比如[1,2,3,4,5,6,8,10,12,15]，那么pMultiply2为元素8的位置.
-	 *                    pMultiply3和pMultiply5同理。
+	 *                    中最后一个丑数的最小丑数。比如[1,2,3,4,5,6,8,10,12,15]，那么此时pMultiply2为元素8的位置
+	 *                    （8*2>15,6*2<15），pMultiply3和pMultiply5同理。
 	 */
 	public static int getUglyNumber2(int index) {
 		if(index <= 0) {
@@ -67,7 +67,7 @@ public class UglyNumber {
 			return -1;
 		}
 		
-//		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(); 没必要用队列排序，元素的加入时本来就是有序的
+//		PriorityQueue<Integer> queue = new PriorityQueue<Integer>(); 没必要用队列排序，元素在加入时本来就是有序的
 		int[] container = new int[index];
 		container[0] = 1;
 		int valid = 1;

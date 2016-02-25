@@ -7,7 +7,7 @@ import java.util.Stack;
  * 
  * 大于十进制的进制（十六进制除外）可以转成十进制，反之不能，除非有字母定义。
  * 
- * @author 2015-12-05
+ * @since 2015-12-05
  *
  */
 public class StackDemo2 {

@@ -20,7 +20,7 @@ import java.util.Map.Entry;
  * 2，再遍历一次str进行检查即可。 
  *    关键在于对各种排序算法的深度理解。
  * 
- * @author 2015-11-29
+ * @since 2015-11-29
  *
  */
 public class JudgeAppearTimes {

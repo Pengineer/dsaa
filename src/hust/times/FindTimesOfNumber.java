@@ -14,7 +14,7 @@ package hust.times;
  * 
  * 补充：对比@see JudgeAppearTimes 要求。
  * 
- * @author 2015-12-11
+ * @since 2015-12-11
  *
  */
 

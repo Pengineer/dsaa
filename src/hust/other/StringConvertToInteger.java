@@ -5,7 +5,7 @@ package hust.other;
  * 
  * 值得细看，关于输入异常的处理、正负数、超范围（如何界定正负数范围）、边界检测、核心转换算法等等。
  * 
- * @author 2015-12-15
+ * @since 2015-12-15
  *
  */
 public class StringConvertToInteger {

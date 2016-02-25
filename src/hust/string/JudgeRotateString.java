@@ -11,7 +11,7 @@ package hust.string;
  * 1，生成str2+str2的字符串str2Double 
  * 2，判断str1是否是str2Double的子串
  * 
- * @author 2015-11-30
+ * @since 2015-11-30
  *
  */
 public class JudgeRotateString {

@@ -6,7 +6,7 @@ package hust.matrix;
  * 关键：1，由外到内逐层旋转，与 "RotatePrintMatrix.java" 思路有点相似
  * 	   2，每一层在旋转时，再每四个元素进行分组，这四个元素就是需要相互交换位置的元素
  * 
- * @author 2015-11-28
+ * @since 2015-11-28
  *
  */
 public class PrintRoratedMatrix {
@@ -14,7 +14,7 @@ public class PrintRoratedMatrix {
 	public static void main(String[] args) {
 		int[][] matrix = {{1,2,3,4}, {5,6,7,8}, {9,10,11,12}, {13,14,15,16}};
 		printMatrix(matrix);
-		rotateMatrix(matrix, 0, 0, 1, 2);//左上角和右下角元素确定一个矩阵的一层
+		rotateMatrix(matrix, 0, 0, 3, 3);//左上角和右下角元素确定一个矩阵的一层
 		printMatrix(matrix);
 	}
 	

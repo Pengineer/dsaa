@@ -27,7 +27,7 @@ package hust.matrix;
  * 阵中的定位不正确，我们需要回到前一个字符(pathLength-1)，然后重新定位。一直重复这个过程，直到路径字符串上所有字符
  * 都在矩阵中找到合适的位置。
  * 
- * @author 2015-12-16
+ * @since 2015-12-16
  *
  */
 public class StringPathInMatrix {

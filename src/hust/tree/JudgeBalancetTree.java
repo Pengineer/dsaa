@@ -6,7 +6,7 @@ package hust.tree;
  * 定义：
  * 平衡二叉树：如果某二叉树中任意结点的左右子树的深度相差不超过1，那么它就是一棵平衡二叉树。
  * 
- * @author 2015-12-13
+ * @since 2015-12-13
  *
  */
 public class JudgeBalancetTree {

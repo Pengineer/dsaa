@@ -5,7 +5,7 @@ package hust.link;
  * 
  * 1，判断一个单向链表是否具有环形结构（@see JudgeCircleLink）
  * 
- * 假定单链表的长度为n，并且该单链表是环状的，现有两个指针p、q，p指针一次走一步，q指针一次走两步，如何判断p和q
+ * 假定单链表的长度为n，并且该单链表是完全环状的，现有两个指针p、q，p指针一次走一步，q指针一次走两步，如何判断p和q
  * 一定会相遇？
  * （1）假设p和q同时从环中的某一个结点开始出发，如果p走了i步后两者相遇，那么一定有i mod n = 2i mod n，即
  *     （2i-i） mod n =0，即i mod n =0，得i=kn。故走了n步后，两个会第一次相遇。
@@ -15,7 +15,7 @@ package hust.link;
  * 2，如果链表不是一个单纯的环结构，开始的几个结点并不在环里面，如何得到链表中第一个在环里面的结点。（@see ObtainFirstNodeOfCircleLink）
  * 
  * @see ObtainBehindKthNode
- * @author 2015-12-07
+ * @since 2015-12-07
  *
  */
 public class JudgeCircleLink {

@@ -8,7 +8,7 @@ package hust.plalindrome;
  * str=“123”。其中的最长回文子串“1”或者“2”或者“3”，所以返回1。
  * str=“abc1234321ab”。其中的最长回文子串“1234321”，所以返回7。
  * 
- * @author 2015-12-28
+ * @since 2015-12-28
  *
  */
 public class Manacher {

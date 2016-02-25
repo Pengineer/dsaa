@@ -1,11 +1,11 @@
 package hust.multisystem;
 
 /**
- * 在Excel2010中，用A表示第一列，B表示第二列，...，Z表示第26列，AA表示第27列，依次类推。
+ * 在Excel2010中，用A表示第一列，B表示第二列，...，Z表示第26列，AA表示第27列，依此类推。
  * 
  * 要求：输入英文字母，输出列数。
  * 
- * @author 2015-12-05
+ * @since 2015-12-05
  *
  */
 public class ExcelColumn {
@@ -15,7 +15,7 @@ public class ExcelColumn {
 //		char[] c = "AB".toCharArray();
 //		System.out.println(b[0] + " " + (int)b[0] + " " + c[0]);
 		
-		System.out.println(getColumn("AA"));
+		System.out.println(getColumn("AC"));
 	}
 	
 	public static int getColumn(String input) {

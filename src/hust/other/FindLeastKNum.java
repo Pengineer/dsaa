@@ -15,7 +15,7 @@ import java.util.PriorityQueue;
  * 适合海量数据，时间复杂度是O(nlogk)的算法，不会修改输入数组，而且输出有序。
  * 
  * @see FindBeyondHalfNum1
- * @author 2015-12-10
+ * @since 2015-12-10
  *
  */
 public class FindLeastKNum {
@@ -72,7 +72,7 @@ public class FindLeastKNum {
 	 * 它的底层就是基于堆结构实现的，自动排序所有元素，默认队首最小，队尾最大，这显然需要重写compare方法进行倒排。
 	 * 
 	 * 注意：
-	 * 不能使用基于红黑树的TreeSet结合，因为Set集合不允许存在重复元素。（红黑树的时间复杂度也是为O(logn)）
+	 * 不能使用基于红黑树的TreeSet集合，因为Set集合不允许存在重复元素。（红黑树的时间复杂度也是为O(logn)）
 	 */
 	public static void getLeastKNum2(int[] arr, int k, int len) {
 		if(arr == null || len < k) {

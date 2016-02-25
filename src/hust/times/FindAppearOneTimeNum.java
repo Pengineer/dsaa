@@ -10,7 +10,7 @@ package hust.times;
  * 
  * 补充：数组是数值的，用hash表实现，额外空间复杂度为O(n)；也不能用数组模拟hash表，因为与字符串不同，数字的范围基本是不可控的。
  * 
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class FindAppearOneTimeNum {

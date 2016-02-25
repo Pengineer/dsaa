@@ -16,7 +16,7 @@ package hust.times;
  * 推广：
  * patition函数，可用于求与大小相关的问题：可以求数组中任意第K大的数字；可以求数组中最小的k个数。
  * 
- * @author 2015-12-09
+ * @since 2015-12-09
  * 
  */
 public class FindBeyondHalfNum1 {

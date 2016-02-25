@@ -5,7 +5,7 @@ package hust.other;
  * 
  * 一道没有任何实际意义的题。
  * 
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class GetSumFrom1Ton {

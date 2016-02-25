@@ -14,7 +14,7 @@ package hust.string;
  * 		  2，交换之后会产生新的左右部分，继续按照这种方式交换，直到左部分和右部分等长，交换之后就停止。
  * 
  * @see ReverseWordInSentence
- * @author 2015-11-29
+ * @since 2015-11-29
  *
  */
 public class RotateString {

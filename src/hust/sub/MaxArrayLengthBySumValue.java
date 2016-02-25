@@ -27,7 +27,7 @@ public class MaxArrayLengthBySumValue {
 	/*
 	 * 假设sum[i]是arr[0..i]上的和。sum[i] + k = sum[j]，其中k=sum[i+1..j]，也就是我们要求的子数组长度。
 	 * 声明一个map集合，用来存放第一次出现任意sum[i]的位置，那么当遍历到j位置时，要想得到j之前的一个子数组的和为k=sum[i+1..j]，那么我们
-	 * 只需要判断map集合中是否有和和sum[i] = sum[j] - k的元素即可。最终关系就是：sum[j] - (sum(j) - k) = k，j是当前遍历到的位置。
+	 * 只需要判断map集合中是否有和为sum[i] = sum[j] - k的元素即可。最终关系就是：sum[j] - (sum(j) - k) = k，j是当前遍历到的位置。
 	 */
 	public static int getMaxLength(int[] arr, int k) {
 		if(arr == null || arr.length == 0) {
@@ -36,7 +36,7 @@ public class MaxArrayLengthBySumValue {
 		HashMap<Integer,Integer> map = new HashMap<Integer,Integer>();
 		int len =0;
 		int sum=0;
-		map.put(0, -1); // 最需要注意的地方：1，为什么放一个key=0的元素？因为如果我们所求的子数组是从数组第一个元素开始的，那么我们的map需要一个为0来满足if进入条件；2，为什么值是-1？因为脚标从0开始的。
+		map.put(0, -1); // 最需要注意的地方：1，为什么放一个key=0的元素？因为如果我们所求的子数组是从数组第一个元素开始的，那么我们的map需要一个为0的元素来满足if进入条件；2，为什么值是-1？因为脚标从0开始的。
 		for(int i=0; i<arr.length; i++) {
 			sum += arr[i];
 			if(map.containsKey(sum - k)) { // 如果包含key

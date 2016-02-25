@@ -7,7 +7,7 @@ package hust.matrix;
  * 方格(35,38)，因为3+5+3+8=19>18。请问该机器人能够到达多少个格子？
  * 
  * @see StringPathInMatrix   关于回溯法的一个题型
- * @author 2015-12-15
+ * @since 2015-12-15
  *
  */
 public class MovableInMatrix {

@@ -9,7 +9,7 @@ package hust.system.design;
  * http://blog.csdn.net/yq76034150/article/details/6776044
  * http://www.cnblogs.com/yanghuahui/p/3755460.html
  * 
- * @author 2015-11-30
+ * @since 2015-11-30
  *
  */
 

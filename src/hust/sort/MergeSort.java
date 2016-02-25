@@ -17,7 +17,7 @@ public class MergeSort {
 		}
 	}
 	
-	//将数组a的l-m和m-r两个有序部分合并成一个l-r的整体有序部分
+	//将数组a的l~m-1和m~r两个有序部分合并成一个l~r的整体有序部分
 	public static void merge(int[] a, int l, int m, int r) {//l表示左边数组的起始位置，m表示右边数组的起始位置，r表示右边数组的结束位置
 		int LETF_SIZE = m-l;
 		int RIGHT_SIZE = r - m + 1;

@@ -16,7 +16,7 @@ package hust.plalindrome;
  * 3，将l+r(逆序)拷贝到左侧未设值的部分，将r+l(逆序)拷贝到右侧 
  * 4，直到strLPS被剥完
  * 
- * @author 2015-11-29
+ * @since 2015-11-29
  *
  */
 public class GetPlalindromeBySubString {

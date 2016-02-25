@@ -9,7 +9,7 @@ package hust.other;
  * 本题可以使用顺序遍历的方式，时间复杂度为O(n)，但是显然这没有用到顺序数组的旋转特性。
  * 考察核心：排序数组的二分查找。
  * 
- * @author 2015-12-05  <剑指offer>
+ * @since 2015-12-05  <剑指offer>
  *
  */
 public class FindMinNumInRotateArray {

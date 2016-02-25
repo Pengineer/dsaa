@@ -8,8 +8,8 @@ package hust;
 public class PowerOperation {
 
 	public static void main(String[] args) {
-		System.out.println(doPower1(2, 3));
-		System.out.println(doPower2(2, 3));
+		System.out.println(doPower1(2, 5));
+		System.out.println(doPower2(2, 5));
 	}
 	
 	//方法一：时间复杂度O(n)

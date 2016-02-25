@@ -9,7 +9,7 @@ package hust.multisystem;
  * }
  * 除此之外不能使用任何额外的随机机制，请用rand01p实现等概率随机产生1~6的随机函数rand1To6。
  * 
- * @author 2015-12-01
+ * @since 2015-12-01
  *
  */
 
@@ -29,7 +29,7 @@ public class GenerateRandom2 {
 	}
 	
 	public static int rand0To3() {
-		return rand01() * 2 + rand01();
+		return rand01() * 2 + rand01();   //可以直接rand01() * 4 + rand01() * 2 + rand01()，去掉大于6和等于0的即可
 	}
 	
 	public static int rand1To6() {

@@ -8,7 +8,7 @@ package hust.string;
  * 
  * KMP：相对于Brute Force(BF)算法而言，KMP算法在匹配时不存在主串指针回溯的问题。匹配中前缀和后缀是相对模式串的失配位置来说的。貌似实际中KMP算法用的并不多
  *
- * @author 2015-11-24
+ * @since 2015-11-24
  *
  */
 

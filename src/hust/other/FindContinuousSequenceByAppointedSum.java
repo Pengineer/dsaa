@@ -7,7 +7,7 @@ package hust.other;
  * 
  * 受@see FindTwoNumByAppointedSum 的指引有此方法。
  * 
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class FindContinuousSequenceByAppointedSum {

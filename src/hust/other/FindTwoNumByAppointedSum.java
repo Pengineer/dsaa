@@ -8,7 +8,7 @@ package hust.other;
  * 1，两层遍历，时间复杂度O(n^2)，没有用到排序条件。
  * 2，一层遍历，确定一个数，然后二分法查找另一个数，时间复杂度O(nlogn)。
  * 
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class FindTwoNumByAppointedSum {

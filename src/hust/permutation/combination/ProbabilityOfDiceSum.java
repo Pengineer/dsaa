@@ -7,7 +7,7 @@ package hust.permutation.combination;
  * 1、先求出所有可能的和的种类，然后求概率；
  * 		显然这是一个大小为n*6的二维数组的排列组合问题。
  * 
- * @author 2015-12-14
+ * @since 2015-12-14
  *
  */
 public class ProbabilityOfDiceSum {

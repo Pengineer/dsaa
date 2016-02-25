@@ -18,9 +18,9 @@ import java.util.Queue;
  * 变形：
  * 如果要按照之字形顺序打印矩阵，那么就是先进后出，也就是要用到栈，而且由于每一层的左右顺序不一样，需要两个栈。
  * 
- * @author 2015-12-08
- * 
  * 补充：使用优先队列获取容器最大值 @see FindLeastKNum (解法二)
+ * 
+ * @since 2015-12-08
  *
  */
 public class QueueDemo1 {
@@ -55,7 +55,7 @@ public class QueueDemo1 {
 		if (root == null) {
 			throw new RuntimeException("Null input");
 		}
-//		Queue<Node> q = new LinkedList<Node>(); //*****LinkedList底层是链表结构的队列*****
+//		Queue<Node> q = new LinkedList<Node>(); //*****LinkedList底层是链表结构的（双端）队列*****
 		Queue<Node> q = new ArrayDeque<Node>(); //根据JavaAPI，ArrayDeque速度可能快于LinkedList
 		q.add(root);
 		Node node = null;

@@ -4,7 +4,7 @@ package hust.times;
  * 在数组中打印出现次数大于一半的数。如果不存在，什么也不打印。 
  * 要求：时间复杂度O(N)，额外空间复杂度O(1)
  * 
- * @author 2015-11-30
+ * @since 2015-11-30
  *
  */
 public class FindBeyondHalfNum2 {

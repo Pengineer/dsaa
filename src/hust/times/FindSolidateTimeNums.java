@@ -10,8 +10,8 @@ import java.util.Map.Entry;
  * 
  * 要求：额外空间复杂度为O(1)
  * 
- * @author 2015-11-30
- * @category 牛客网 http://www.nowcoder.com/discuss/338
+ * @since 2015-11-30
+ * @category 牛客网{@link http://www.nowcoder.com/discuss/338}
  *
  */
 

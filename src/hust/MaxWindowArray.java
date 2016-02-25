@@ -54,7 +54,7 @@ public class MaxWindowArray {
 			} else {
 				while (!qmax.isEmpty() && arr[qmax.peekLast()] <= arr[i]) // 判空条件必须写在前面，汗！汗！汗！
 					qmax.pollLast();
-				if (!qmax.isEmpty() && i - qmax.peekFirst() >= w) // 用if就可以了，每一个元素都会判断队首，因此最多一个过期
+				if (!qmax.isEmpty() && i - qmax.peekFirst() >= w) // 用if就可以了，每一个元素都会判断队首，因此最多一个过期，保证队列中最多只有w个元素
 					qmax.pollFirst();
 				qmax.add(i); // 如果add写在if的上面，上面的if就不需要判空了
 			}

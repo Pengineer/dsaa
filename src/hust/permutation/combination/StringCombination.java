@@ -43,7 +43,7 @@ public class StringCombination {
 		int n = a.length;
 		for(int i=0; i<(1<<n); i++){//循环2^n次
 			String setStr = Integer.toBinaryString(i);//将int值转换成二进制值的字符串
-			int unChoose = n-setStr.length();
+			int unChoose = n-setStr.length(); //将3位二进制对齐补白
 			System.out.print("{");
 			for(int j=0; j<setStr.length(); j++){
 				if(setStr.charAt(j)=='1')//1表示被选中，0表示没有被选中
