@@ -13,16 +13,17 @@ public class MaxCommenFactor {
 		//假设m>n
 		System.out.println(getMaxCommenFactor1(648, 282));
 		System.out.println(getMaxCommenFactor2(648, 282));
+		System.out.println(getMaxCommenFactor3(648, 282));
 	}
 	
 	//方法一：欧几里得算法，O(logn)
-	public static int getMaxCommenFactor1(int m, int n) {
-		while (n > 0) {
-			int rem = m % n;
-			m = n;
-			n = rem;
+	public static int getMaxCommenFactor1(int A, int B) {
+		while (B > 0) {
+			int rem = A % B;
+			A = B;
+			B = rem;
 		}
-		return m;
+		return A;
 	}
 	
 	//方法二：求得较小数的所有公因数，在这些判断是不是较大数的公因数，O(n)
@@ -42,5 +43,13 @@ public class MaxCommenFactor {
 			}
 		}
 		return 1;
+	}
+	
+	//欧几里得递归写法
+	public static int getMaxCommenFactor3(int A, int B){
+		if (B == 0) {
+			return A;
+		} else
+			return getMaxCommenFactor3(B, A%B);
 	}
 }
