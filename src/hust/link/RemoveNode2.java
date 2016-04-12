@@ -20,7 +20,7 @@ package hust.link;
  * @since 2016-01-29
  *
  */
-public class RemoveNode {
+public class RemoveNode2 {
 
 	public static void remove(Node node) {
 		if(node == null) {
